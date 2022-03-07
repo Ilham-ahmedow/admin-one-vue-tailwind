@@ -17,7 +17,7 @@ export default [
   'General',
   [
     {
-      to: '/dashboard',
+      to: '/',
       icon: mdiDesktopMac,
       label: 'Dashboard'
     }

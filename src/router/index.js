@@ -1,25 +1,13 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Style from '@/views/Style.vue'
 import Home from '@/views/Home.vue'
 
 const routes = [
   {
     meta: {
-      title: 'Select style',
-      fullScreen: true
-    },
-    path: '/',
-    name: 'style',
-    component: Style
-  },
-  {
-    // Document title tag
-    // We combine it with defaultDocumentTitle set in `src/main.js` on router.afterEach hook
-    meta: {
       title: 'Dashboard'
     },
-    path: '/dashboard',
-    name: 'dashboard',
+    path: '/',
+    name: 'home',
     component: Home
   },
   {
@@ -28,9 +16,6 @@ const routes = [
     },
     path: '/tables',
     name: 'tables',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "tables" */ '@/views/Tables.vue')
   },
   {

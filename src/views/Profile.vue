@@ -22,16 +22,15 @@ const profileForm = reactive({
   name: store.state.userName,
   email: store.state.userEmail
 })
+const submitProfile = () => {
+  store.commit('user', profileForm)
+}
 
 const passwordForm = reactive({
   password_current: '',
   password: '',
   password_confirmation: ''
 })
-
-const submitProfile = () => {
-  store.commit('user', profileForm)
-}
 
 const submitPass = () => {
   //

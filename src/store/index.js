@@ -37,7 +37,7 @@ export default createStore({
     isAsideLgActive: false,
 
     /* Dark mode */
-    darkMode: false,
+    darkMode: true,
 
     /* Field focus with ctrl+k (to register only once) */
     isFieldFocusRegistered: false,
@@ -65,6 +65,7 @@ export default createStore({
 
     /* User */
     user (state, payload) {
+      console.log(payload)
       if (payload.name) {
         state.userName = payload.name
       }

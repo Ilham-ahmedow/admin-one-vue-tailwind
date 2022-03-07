@@ -10,17 +10,22 @@ import Control from '@/components/Control.vue'
 import Divider from '@/components/Divider.vue'
 import JbButton from '@/components/JbButton.vue'
 import JbButtons from '@/components/JbButtons.vue'
+import { useStore } from 'vuex'
+
+const store = useStore()
+const router = useRouter()
 
 const form = reactive({
-  login: 'john.doe',
+  email: 'john@example.com',
+  name: 'John Doe',
+  avatar: 'https://avatars.dicebear.com/api/avataaars/example.svg?options[top][]=shortHair&options[accessoriesChance]=93',
   pass: 'highly-secure-password-fYjUw-',
   remember: ['remember']
 })
 
-const router = useRouter()
-
 const submit = () => {
-  router.push('/dashboard')
+  store.commit('user', form)
+  router.push('/')
 }
 </script>
 
@@ -36,13 +41,13 @@ const submit = () => {
       @submit.prevent="submit"
     >
       <field
-        label="Login"
-        help="Please enter your login"
+        label="Email"
+        help="Please enter your email"
       >
         <control
-          v-model="form.login"
+          v-model="form.email"
           :icon="mdiAccount"
-          name="login"
+          name="email"
           autocomplete="username"
         />
       </field>
@@ -75,7 +80,7 @@ const submit = () => {
           label="Login"
         />
         <jb-button
-          to="/dashboard"
+          to="/"
           color="info"
           outline
           label="Back"
