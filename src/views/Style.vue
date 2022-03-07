@@ -55,6 +55,7 @@ const click = slug => {
             :src="`https://static.justboil.me/templates/one/small/${style.slug}.png`"
             width="955"
             height="540"
+            alt="132"
           >
         </div>
 
